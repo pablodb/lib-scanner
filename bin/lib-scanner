@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+
+<?php
+if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    die("Error, probablemente no se ejecuto el comando 'composer install' \n");
+} else {
+    require __DIR__ . '/../vendor/autoload.php';
+}
+\Ampliffy\LibScanner\Factory::loadDotEnvs();
+
+use Symfony\Component\Console\Application;
+use \Ampliffy\LibScanner\Console\{
+    TreeCommand,
+    SearchLibCommand,
+    SearchLibFromDBCommand,
+    DBCommand
+};
+
+$app = new Application();
+$app->add(new TreeCommand());
+$app->add(new SearchLibCommand());
+$app->add(new SearchLibFromDBCommand());
+$app->add(new DBCommand());
+$app->run();

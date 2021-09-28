@@ -1,0 +1,39 @@
+{
+    "name": "ampliffy/lib-scanner",
+    "description": "Proyecto ampliffy",
+
+    "repositories": [{
+        "type": "composer",
+        "url": "https://satis.siu.edu.ar"
+    }],
+
+    "config": {
+        "bin-dir": "bin"
+    },
+
+    "require": {
+        "php": "^7.3",
+        "monolog/monolog": "~1.13",
+        "symfony/config": "~3.0",
+        "symfony/console": "~5.3",
+        "symfony/yaml": "~5.3",
+        "pimple/pimple": "~3.0",
+        "vlucas/phpdotenv": "~2.6|~3.6",
+        "robmorgan/phinx": "~0.6"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.0",
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Ampliffy\\LibScanner\\": "src/Ampliffy/LibScanner"
+        },
+        "classmap": ["src"]
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
